@@ -23,3 +23,5 @@ ARG BASE_TAG=7.9
 
 FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
 COPY --from=build /etc/pki/ca-trust/source/anchors/* /etc/pki/ca-trust/source/anchors/
+
+RUN update-ca-trust extract
