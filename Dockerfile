@@ -1,6 +1,6 @@
 ARG BASE_REGISTRY=registry1.dsop.io
-ARG BASE_IMAGE=ironbank/redhat/ubi/ubi7
-ARG BASE_TAG=7.9
+ARG BASE_IMAGE=ironbank/redhat/ubi/ubi8
+ARG BASE_TAG=8.3
 
 FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG} as build
 
@@ -18,8 +18,8 @@ RUN yum install -y unzip openssl && \
 
 
 ARG BASE_REGISTRY=registry1.dsop.io
-ARG BASE_IMAGE=ironbank/redhat/ubi/ubi7
-ARG BASE_TAG=7.9
+ARG BASE_IMAGE=ironbank/redhat/ubi/ubi8
+ARG BASE_TAG=8.3
 
 FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
 COPY --from=build /etc/pki/ca-trust/source/anchors/* /etc/pki/ca-trust/source/anchors/
